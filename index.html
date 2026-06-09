@@ -1183,12 +1183,12 @@ footer {
   .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; padding: 20px; background: rgba(2,8,24,0.98); border-bottom: 1px solid var(--glass-border); }
   .nav-links.open { display: flex; }
   .nav-hamburger { display: flex; }
-
+  
   .countdown-grid { grid-template-columns: repeat(2,1fr); }
   .gallery-grid { grid-template-columns: repeat(2,1fr); }
   .gallery-item:nth-child(1),
   .gallery-item:nth-child(4) { grid-row: span 1; aspect-ratio: 1; }
-
+  
   .timeline-wrap::before { left: 20px; }
   .timeline-item { flex-direction: column !important; padding-left: 50px; }
   .timeline-item:nth-child(even) .timeline-content { text-align: left; }
@@ -1280,7 +1280,7 @@ footer {
 <section id="hero">
   <div class="glass-card hero-inner">
     <div class="stars-container" id="hero-stars"></div>
-
+    
     <div class="hero-eyebrow">10 June · A Very Special Day</div>
 
     <div class="hero-emoji">🎂💙✨</div>
@@ -2141,15 +2141,15 @@ function toggleNav() {
 
 // ---- VIDEO UNLOCK ----
 (function() {
-  const now  = new Date();
-  const june10 = new Date(now.getFullYear(), 5, 10);
-  if (now >= june10) {
-    // Remove lock overlays
+  const now = new Date();
+  // Unlock on June 10 (month=5) or any day after
+  const unlocked = (now.getMonth() > 5) || 
+                   (now.getMonth() === 5 && now.getDate() >= 10);
+  if (unlocked) {
     ['lock-video1','lock-video2'].forEach(id => {
       const el = document.getElementById(id);
       if (el) el.remove();
     });
-    // Setup video play buttons
     setupVideoPlay('video1', 'play-btn-1');
     setupVideoPlay('video2', 'play-btn-2');
   }
@@ -2176,9 +2176,11 @@ function setupVideoPlay(videoId, btnId) {
 
 // ---- GALLERY UNLOCK + LIGHTBOX ----
 (function() {
-  const now    = new Date();
-  const june10 = new Date(now.getFullYear(), 5, 10);
-  if (now >= june10) {
+  const now = new Date();
+  // Unlock on June 10 (month=5) or any day after
+  const unlocked = (now.getMonth() > 5) || 
+                   (now.getMonth() === 5 && now.getDate() >= 10);
+  if (unlocked) {
     setupGallery('friendship-gallery', 'friend', 6);
     setupGallery('priyanka-gallery', 'priyanka', 7);
   }
