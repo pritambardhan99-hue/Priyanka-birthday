@@ -1382,13 +1382,7 @@ footer {
         <video id="video1" preload="none" poster="">
           <source src="video1.mp4" type="video/mp4">
         </video>
-        <div class="play-btn" id="play-btn-1"></div>
-        <!-- LOCK OVERLAY — remove after June 10 -->
-        <div class="lock-overlay" id="lock-video1">
-          <div class="lock-icon">🔒</div>
-          <div class="lock-text">Special message<br>awaiting the big day</div>
-          <div class="lock-date">Unlocks 10 June</div>
-        </div>
+        <div class="play-btn" id="play-btn-1" onclick="toggleVideo('video1','play-btn-1')"></div>
       </div>
       <div class="video-info">
         <div class="video-title">Birthday Message 1 🎬</div>
@@ -1402,12 +1396,7 @@ footer {
         <video id="video2" preload="none" poster="">
           <source src="video2.mp4" type="video/mp4">
         </video>
-        <div class="play-btn" id="play-btn-2"></div>
-        <div class="lock-overlay" id="lock-video2">
-          <div class="lock-icon">🔒</div>
-          <div class="lock-text">Another surprise<br>coming on your birthday</div>
-          <div class="lock-date">Unlocks 10 June</div>
-        </div>
+        <div class="play-btn" id="play-btn-2" onclick="toggleVideo('video2','play-btn-2')"></div>
       </div>
       <div class="video-info">
         <div class="video-title">Birthday Message 2 🎬</div>
@@ -1430,49 +1419,35 @@ footer {
     <span class="section-label reveal text-center" style="display:block">Captured Together</span>
     <h2 class="section-title reveal reveal-delay-1">Friendship <span>Moments</span></h2>
     <div class="gallery-grid" id="friendship-gallery">
-      <!-- Images locked until June 10 -->
-      <!-- Replace src with friend1.jpg etc. after the date -->
-      <div class="gallery-item reveal reveal-delay-1">
-        <div class="gallery-item-placeholder">
-          <span class="ph-icon">🔒</span>
-          <span class="ph-label">friend1.jpg<br><small>Unlocks June 10</small></span>
-        </div>
-        <div class="gallery-overlay"><span class="gallery-zoom-icon">🔒</span></div>
+      <div class="gallery-item reveal reveal-delay-1" onclick="openLightbox('friend1.jpg')">
+        <img src="friend1.jpg" alt="Friendship moment 1" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-item-placeholder" style="display:none"><span class="ph-icon">🖼️</span><span class="ph-label">friend1.jpg</span></div>
+        <div class="gallery-overlay"><span class="gallery-zoom-icon">🔍</span></div>
       </div>
-      <div class="gallery-item reveal reveal-delay-2">
-        <div class="gallery-item-placeholder">
-          <span class="ph-icon">🔒</span>
-          <span class="ph-label">friend2.jpg<br><small>Unlocks June 10</small></span>
-        </div>
-        <div class="gallery-overlay"><span class="gallery-zoom-icon">🔒</span></div>
+      <div class="gallery-item reveal reveal-delay-2" onclick="openLightbox('friend2.jpg')">
+        <img src="friend2.jpg" alt="Friendship moment 2" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-item-placeholder" style="display:none"><span class="ph-icon">🖼️</span><span class="ph-label">friend2.jpg</span></div>
+        <div class="gallery-overlay"><span class="gallery-zoom-icon">🔍</span></div>
       </div>
-      <div class="gallery-item reveal reveal-delay-3">
-        <div class="gallery-item-placeholder">
-          <span class="ph-icon">🔒</span>
-          <span class="ph-label">friend3.jpg<br><small>Unlocks June 10</small></span>
-        </div>
-        <div class="gallery-overlay"><span class="gallery-zoom-icon">🔒</span></div>
+      <div class="gallery-item reveal reveal-delay-3" onclick="openLightbox('friend3.jpg')">
+        <img src="friend3.jpg" alt="Friendship moment 3" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-item-placeholder" style="display:none"><span class="ph-icon">🖼️</span><span class="ph-label">friend3.jpg</span></div>
+        <div class="gallery-overlay"><span class="gallery-zoom-icon">🔍</span></div>
       </div>
-      <div class="gallery-item reveal reveal-delay-4">
-        <div class="gallery-item-placeholder">
-          <span class="ph-icon">🔒</span>
-          <span class="ph-label">friend4.jpg<br><small>Unlocks June 10</small></span>
-        </div>
-        <div class="gallery-overlay"><span class="gallery-zoom-icon">🔒</span></div>
+      <div class="gallery-item reveal reveal-delay-4" onclick="openLightbox('friend4.jpg')">
+        <img src="friend4.jpg" alt="Friendship moment 4" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-item-placeholder" style="display:none"><span class="ph-icon">🖼️</span><span class="ph-label">friend4.jpg</span></div>
+        <div class="gallery-overlay"><span class="gallery-zoom-icon">🔍</span></div>
       </div>
-      <div class="gallery-item reveal reveal-delay-5">
-        <div class="gallery-item-placeholder">
-          <span class="ph-icon">🔒</span>
-          <span class="ph-label">friend5.jpg<br><small>Unlocks June 10</small></span>
-        </div>
-        <div class="gallery-overlay"><span class="gallery-zoom-icon">🔒</span></div>
+      <div class="gallery-item reveal reveal-delay-5" onclick="openLightbox('friend5.jpg')">
+        <img src="friend5.jpg" alt="Friendship moment 5" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-item-placeholder" style="display:none"><span class="ph-icon">🖼️</span><span class="ph-label">friend5.jpg</span></div>
+        <div class="gallery-overlay"><span class="gallery-zoom-icon">🔍</span></div>
       </div>
-      <div class="gallery-item reveal">
-        <div class="gallery-item-placeholder">
-          <span class="ph-icon">🔒</span>
-          <span class="ph-label">friend6.jpg<br><small>Unlocks June 10</small></span>
-        </div>
-        <div class="gallery-overlay"><span class="gallery-zoom-icon">🔒</span></div>
+      <div class="gallery-item reveal" onclick="openLightbox('friend6.jpg')">
+        <img src="friend6.jpg" alt="Friendship moment 6" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-item-placeholder" style="display:none"><span class="ph-icon">🖼️</span><span class="ph-label">friend6.jpg</span></div>
+        <div class="gallery-overlay"><span class="gallery-zoom-icon">🔍</span></div>
       </div>
     </div>
   </div>
@@ -1482,47 +1457,35 @@ footer {
     <span class="section-label reveal text-center" style="display:block">The Star of the Day</span>
     <h2 class="section-title reveal reveal-delay-1">Priyanka's <span>Special Photos</span></h2>
     <div class="gallery-grid" id="priyanka-gallery">
-      <div class="gallery-item reveal reveal-delay-1">
-        <div class="gallery-item-placeholder">
-          <span class="ph-icon">🔒</span>
-          <span class="ph-label">priyanka1.jpg<br><small>Unlocks June 10</small></span>
-        </div>
-        <div class="gallery-overlay"><span class="gallery-zoom-icon">🔒</span></div>
+      <div class="gallery-item reveal reveal-delay-1" onclick="openLightbox('priyanka1.jpg')">
+        <img src="priyanka1.jpg" alt="Priyanka 1" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-item-placeholder" style="display:none"><span class="ph-icon">🖼️</span><span class="ph-label">priyanka1.jpg</span></div>
+        <div class="gallery-overlay"><span class="gallery-zoom-icon">🔍</span></div>
       </div>
-      <div class="gallery-item reveal reveal-delay-2">
-        <div class="gallery-item-placeholder">
-          <span class="ph-icon">🔒</span>
-          <span class="ph-label">priyanka2.jpg<br><small>Unlocks June 10</small></span>
-        </div>
-        <div class="gallery-overlay"><span class="gallery-zoom-icon">🔒</span></div>
+      <div class="gallery-item reveal reveal-delay-2" onclick="openLightbox('priyanka2.jpg')">
+        <img src="priyanka2.jpg" alt="Priyanka 2" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-item-placeholder" style="display:none"><span class="ph-icon">🖼️</span><span class="ph-label">priyanka2.jpg</span></div>
+        <div class="gallery-overlay"><span class="gallery-zoom-icon">🔍</span></div>
       </div>
-      <div class="gallery-item reveal reveal-delay-3">
-        <div class="gallery-item-placeholder">
-          <span class="ph-icon">🔒</span>
-          <span class="ph-label">priyanka3.jpg<br><small>Unlocks June 10</small></span>
-        </div>
-        <div class="gallery-overlay"><span class="gallery-zoom-icon">🔒</span></div>
+      <div class="gallery-item reveal reveal-delay-3" onclick="openLightbox('priyanka3.jpg')">
+        <img src="priyanka3.jpg" alt="Priyanka 3" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-item-placeholder" style="display:none"><span class="ph-icon">🖼️</span><span class="ph-label">priyanka3.jpg</span></div>
+        <div class="gallery-overlay"><span class="gallery-zoom-icon">🔍</span></div>
       </div>
-      <div class="gallery-item reveal reveal-delay-4">
-        <div class="gallery-item-placeholder">
-          <span class="ph-icon">🔒</span>
-          <span class="ph-label">priyanka4.jpg<br><small>Unlocks June 10</small></span>
-        </div>
-        <div class="gallery-overlay"><span class="gallery-zoom-icon">🔒</span></div>
+      <div class="gallery-item reveal reveal-delay-4" onclick="openLightbox('priyanka4.jpg')">
+        <img src="priyanka4.jpg" alt="Priyanka 4" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-item-placeholder" style="display:none"><span class="ph-icon">🖼️</span><span class="ph-label">priyanka4.jpg</span></div>
+        <div class="gallery-overlay"><span class="gallery-zoom-icon">🔍</span></div>
       </div>
-      <div class="gallery-item reveal reveal-delay-5">
-        <div class="gallery-item-placeholder">
-          <span class="ph-icon">🔒</span>
-          <span class="ph-label">priyanka5.jpg<br><small>Unlocks June 10</small></span>
-        </div>
-        <div class="gallery-overlay"><span class="gallery-zoom-icon">🔒</span></div>
+      <div class="gallery-item reveal reveal-delay-5" onclick="openLightbox('priyanka5.jpg')">
+        <img src="priyanka5.jpg" alt="Priyanka 5" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-item-placeholder" style="display:none"><span class="ph-icon">🖼️</span><span class="ph-label">priyanka5.jpg</span></div>
+        <div class="gallery-overlay"><span class="gallery-zoom-icon">🔍</span></div>
       </div>
-      <div class="gallery-item reveal">
-        <div class="gallery-item-placeholder">
-          <span class="ph-icon">🔒</span>
-          <span class="ph-label">priyanka6.jpg<br><small>Unlocks June 10</small></span>
-        </div>
-        <div class="gallery-overlay"><span class="gallery-zoom-icon">🔒</span></div>
+      <div class="gallery-item reveal" onclick="openLightbox('priyanka6.jpg')">
+        <img src="priyanka6.jpg" alt="Priyanka 6" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-item-placeholder" style="display:none"><span class="ph-icon">🖼️</span><span class="ph-label">priyanka6.jpg</span></div>
+        <div class="gallery-overlay"><span class="gallery-zoom-icon">🔍</span></div>
       </div>
     </div>
   </div>
@@ -2138,6 +2101,19 @@ function toggleNav() {
   updateCountdown();
   setInterval(updateCountdown, 1000);
 })();
+
+function toggleVideo(videoId, btnId) {
+  const video = document.getElementById(videoId);
+  const btn   = document.getElementById(btnId);
+  if (!video) return;
+  if (video.paused) {
+    video.play();
+    if (btn) btn.style.opacity = '0';
+  } else {
+    video.pause();
+    if (btn) btn.style.opacity = '1';
+  }
+}
 
 // ---- VIDEO UNLOCK ----
 (function() {
